@@ -67,4 +67,5 @@ Lưu thông tin thanh toán: mã thanh toán, số tiền, trạng thái.
 
 Đảm bảo an toàn giao dịch.
 
-<img width="795" height="598" alt="image" src="https://github.com/user-attachments/assets/eed9f674-0b87-4d49-903f-5ceafd1f6f37" />
+<img width="1085" height="501" alt="image" src="https://github.com/user-attachments/assets/d95ba82a-bd5f-4402-88b6-f27556788855" />
+
