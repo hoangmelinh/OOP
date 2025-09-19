@@ -1,53 +1,69 @@
-Báo cáo hệ thống quản lý đặt vé xem phim
-Giới thiệu
+Yêu cầu bài toán quản lý vé xem phim
+1. Bài toán đặt ra
 
-Một rạp chiếu phim muốn xây dựng hệ thống đặt vé online để quản lý phim, lịch chiếu, vé và người dùng. Hệ thống có các chức năng chính như sau:
+Các rạp chiếu phim hiện nay cần một hệ thống quản lý đặt vé trực tuyến để:
 
-1. Quản lý người dùng (User)
+Cung cấp thông tin phim, lịch chiếu và rạp cho khách hàng.
 
-Người dùng có thể đăng ký tài khoản (nhập username, password, email, role).
+Cho phép khách hàng đặt vé, chọn ghế, thanh toán dễ dàng.
 
-Người dùng có thể đăng nhập hệ thống.
+Hỗ trợ rạp trong việc quản lý vé, phòng chiếu, suất chiếu và doanh thu.
 
-Người dùng sau khi đăng nhập có thể quản lý tài khoản (cập nhật thông tin).
+2. Yêu cầu chức năng
+2.1. Quản lý người dùng (User)
 
-2. Quản lý phim (Movie)
+Người dùng có thể đăng ký tài khoản, đăng nhập và quản lý thông tin cá nhân.
 
-Quản trị viên có thể thêm/sửa/xóa phim với các thông tin: mã phim, tên phim, mô tả, thể loại, thời lượng.
+Mỗi người dùng có thể đặt nhiều vé.
 
-Hệ thống hiển thị danh sách phim và thông tin chi tiết cho người dùng.
+Người dùng có thể xem lại lịch sử đặt vé, hủy vé trước giờ chiếu.
 
-3. Quản lý lịch chiếu (Showtime)
+2.2. Quản lý phim (Movie)
 
-Mỗi bộ phim có nhiều suất chiếu khác nhau, gồm ngày, giờ và phòng chiếu.
+Lưu trữ thông tin phim: mã phim, tên phim, mô tả, thể loại.
 
-Quản trị viên có thể thêm, sửa, xóa lịch chiếu.
+Cho phép hiển thị thông tin chi tiết phim.
 
-4. Quản lý ghế ngồi (Seat)
+Mỗi phim có thể được chiếu tại nhiều rạp, nhiều suất chiếu khác nhau.
 
-Trong mỗi suất chiếu, phòng chiếu có danh sách các ghế.
+2.3. Quản lý rạp chiếu (Cinema)
 
-Người dùng có thể chọn ghế còn trống để đặt vé.
+Quản lý thông tin rạp: mã rạp, tên rạp, địa chỉ.
 
-5. Quản lý vé (Ticket)
+Mỗi rạp có nhiều phòng chiếu.
 
-Một vé gắn với người dùng, suất chiếu và ghế.
+Mỗi suất chiếu sẽ gắn với một rạp cụ thể.
 
-Người dùng có thể đặt vé hoặc hủy vé.
+2.4. Quản lý suất chiếu (ShowTime)
 
-Trạng thái vé: đã đặt, đã thanh toán, đã hủy.
+Lưu thông tin về các suất chiếu: mã suất chiếu, phim chiếu, ngày chiếu, phòng chiếu.
 
-6. Quản lý thanh toán (Payment)
+Một phim có thể có nhiều suất chiếu tại nhiều rạp khác nhau.
 
-Sau khi đặt vé, người dùng cần thực hiện thanh toán.
+Quản lý tình trạng ghế trong từng suất chiếu.
 
-Mỗi thanh toán có mã giao dịch, số tiền, trạng thái.
+2.5. Quản lý ghế (Seat)
 
-Hệ thống có thể quản lý và theo dõi trạng thái giao dịch (thành công/thất bại).
+Mỗi phòng chiếu có nhiều ghế (hàng, số ghế).
 
-- link docs mô tả : https://docs.google.com/document/d/1TzOLY6r4XPx5GJ8knqD5ei02EaTnD6vWPjUKg0fLurU/edit?usp=sharing
+Ghế có trạng thái (trống, đã đặt).
 
-* Các lớp chính bao gồm: User, Cinema, Movie, ShowTime, Seat, Ticket, Payment.
+Người dùng chọn ghế khi đặt vé.
 
+2.6. Quản lý vé (Ticket)
+
+Mỗi vé gắn với: suất chiếu, người dùng, ghế và phim.
+
+Vé có trạng thái (đặt thành công, đã hủy).
+
+Người dùng có thể đặt vé mới hoặc hủy vé.
+
+2.7. Quản lý thanh toán (Payment)
+
+Xử lý thanh toán cho từng vé.
+
+Lưu thông tin thanh toán: mã thanh toán, số tiền, trạng thái.
+
+Đảm bảo an toàn giao dịch.
 
 <img width="795" height="598" alt="image" src="https://github.com/user-attachments/assets/eed9f674-0b87-4d49-903f-5ceafd1f6f37" />
