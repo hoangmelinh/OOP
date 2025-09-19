@@ -13,7 +13,7 @@ Hỗ trợ rạp trong việc quản lý vé, phòng chiếu, suất chiếu và
 
 2.1. Quản lý người dùng (User)
 
-Người dùng có thể đăng ký tài khoản, đăng nhập và quản lý thông tin cá nhân.
+Người dùng có thể đăng ký tài khoản, đăng nhập và quản lý thông tin cá nhân (Tên, địa chỉ, cách liên lạc) .
 
 Mỗi người dùng có thể đặt nhiều vé.
 
