@@ -10,6 +10,7 @@ Cho phép khách hàng đặt vé, chọn ghế, thanh toán dễ dàng.
 Hỗ trợ rạp trong việc quản lý vé, phòng chiếu, suất chiếu và doanh thu.
 
 2. Yêu cầu chức năng
+
 2.1. Quản lý người dùng (User)
 
 Người dùng có thể đăng ký tài khoản, đăng nhập và quản lý thông tin cá nhân.
