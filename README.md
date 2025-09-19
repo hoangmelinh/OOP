@@ -50,4 +50,4 @@ Hệ thống có thể quản lý và theo dõi trạng thái giao dịch (thàn
 * Các lớp chính bao gồm: User, Cinema, Movie, ShowTime, Seat, Ticket, Payment.
 
 
-<img width="732" height="525" alt="image" src="https://github.com/user-attachments/assets/011af974-e0c0-421d-9a24-126eacee3936" />
+<img width="795" height="598" alt="image" src="https://github.com/user-attachments/assets/eed9f674-0b87-4d49-903f-5ceafd1f6f37" />
