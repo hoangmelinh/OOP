@@ -2,7 +2,7 @@ Báo cáo hệ thống quản lý đặt vé xem phim
 1. Giới thiệu
 
 Hệ thống quản lý đặt vé xem phim được xây dựng nhằm hỗ trợ người dùng trong việc lựa chọn phim, đặt vé, chọn ghế và thanh toán trực tuyến. Mô hình UML class diagram mô tả cấu trúc dữ liệu, chức năng của từng lớp cũng như các mối quan hệ giữa chúng.
-
+# link docs mô tả : https://docs.google.com/document/d/1TzOLY6r4XPx5GJ8knqD5ei02EaTnD6vWPjUKg0fLurU/edit?usp=sharing
 Các lớp chính bao gồm: User, Cinema, Movie, ShowTime, Seat, Ticket, Payment.
 
 2. Mô tả chi tiết các lớp
