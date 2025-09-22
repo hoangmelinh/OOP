@@ -1,4 +1,8 @@
+
 #  Hệ thống Quản lý Rạp Chiếu Phim
+
+## Description: https://docs.google.com/document/d/1TzOLY6r4XPx5GJ8knqD5ei02EaTnD6vWPjUKg0fLurU/edit?tab=t.0
+---
 
 ##  Giới thiệu
 Hệ thống Quản lý Rạp Chiếu Phim được xây dựng nhằm:
