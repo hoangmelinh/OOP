@@ -9,7 +9,7 @@ Hệ thống Quản lý Rạp Chiếu Phim được xây dựng nhằm:
 
 ---
 
-##  Chức năng chính
+##  Yêu cầu Chức năng 
 
 ###  Khách hàng (User)
 - Đăng ký, đăng nhập, cập nhật thông tin cá nhân.  
