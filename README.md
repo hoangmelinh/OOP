@@ -1,71 +1,138 @@
-Yêu cầu bài toán quản lý vé xem phim
-1. Bài toán đặt ra
+🎬 Hệ thống Quản lý Rạp Chiếu Phim
+📌 Giới thiệu
 
-Các rạp chiếu phim hiện nay cần một hệ thống quản lý đặt vé trực tuyến để:
+Hệ thống Quản lý Rạp Chiếu Phim được xây dựng nhằm:
 
-Cung cấp thông tin phim, lịch chiếu và rạp cho khách hàng.
+Tự động hóa quy trình đặt vé, chọn ghế và thanh toán.
 
-Cho phép khách hàng đặt vé, chọn ghế, thanh toán dễ dàng.
+Hỗ trợ khách hàng dễ dàng đăng ký, đăng nhập, xem thông tin phim và đặt vé trực tuyến.
 
-Hỗ trợ rạp trong việc quản lý vé, phòng chiếu, suất chiếu và doanh thu.
+Giúp nhân viên/thu ngân theo dõi lịch chiếu, quản lý tình trạng ghế, xử lý đơn đặt vé và thanh toán.
 
-2. Yêu cầu chức năng
+Cho phép quản lý cập nhật thông tin phim, rạp chiếu, suất chiếu và thống kê doanh thu.
 
-2.1. Quản lý người dùng (User)
+🚀 Chức năng chính
+👤 Khách hàng (User)
 
-Người dùng có thể đăng ký tài khoản, đăng nhập và quản lý thông tin cá nhân (Tên, địa chỉ, cách liên lạc) .
+Đăng ký, đăng nhập, cập nhật thông tin cá nhân.
 
-Mỗi người dùng có thể đặt nhiều vé.
+Xem danh sách phim, chi tiết phim, lịch chiếu.
 
-Người dùng có thể xem lại lịch sử đặt vé, hủy vé trước giờ chiếu.
+Chọn suất chiếu, đặt vé, chọn ghế.
 
-2.2. Quản lý phim (Movie)
+Thanh toán vé (tiền mặt/online).
 
-Lưu trữ thông tin phim: mã phim, tên phim, mô tả, thể loại.
+Thuộc tính:
 
-Cho phép hiển thị thông tin chi tiết phim.
+userId : String
 
-Mỗi phim có thể được chiếu tại nhiều rạp, nhiều suất chiếu khác nhau.
+fullName : String
 
-2.3. Quản lý rạp chiếu (Cinema)
+email : String
 
-Quản lý thông tin rạp: mã rạp, tên rạp, địa chỉ.
+password : String
 
-Mỗi rạp có nhiều phòng chiếu.
+🏢 Rạp chiếu (Cinema)
 
-Mỗi suất chiếu sẽ gắn với một rạp cụ thể.
+Quản lý thông tin rạp và địa chỉ.
 
-2.4. Quản lý suất chiếu (ShowTime)
+Liên kết với các suất chiếu.
 
-Lưu thông tin về các suất chiếu: mã suất chiếu, phim chiếu, ngày chiếu, phòng chiếu.
+Thuộc tính:
 
-Một phim có thể có nhiều suất chiếu tại nhiều rạp khác nhau.
+cinemaId : String
 
-Quản lý tình trạng ghế trong từng suất chiếu.
+name : String
 
-2.5. Quản lý ghế (Seat)
+address : String
 
-Mỗi phòng chiếu có nhiều ghế (hàng, số ghế).
+🎥 Phim (Movie)
 
-Ghế có trạng thái (trống, đã đặt).
+Quản lý thông tin phim (tên, mô tả, thể loại).
 
-Người dùng chọn ghế khi đặt vé.
+Hiển thị danh sách phim cho khách hàng lựa chọn.
 
-2.6. Quản lý vé (Ticket)
+Thuộc tính:
 
-Mỗi vé gắn với: suất chiếu, người dùng, ghế và phim.
+movieId : String
 
-Vé có trạng thái (đặt thành công, đã hủy).
+name : String
 
-Người dùng có thể đặt vé mới hoặc hủy vé.
+description : String
 
-2.7. Quản lý thanh toán (Payment)
+genre : String
 
-Xử lý thanh toán cho từng vé.
+💺 Ghế (Seat)
 
-Lưu thông tin thanh toán: mã thanh toán, số tiền, trạng thái.
+Quản lý thông tin ghế trong phòng chiếu.
 
-Đảm bảo an toàn giao dịch.
+Hiển thị trạng thái ghế (còn trống/đã đặt).
 
+Thuộc tính:
+
+seatId : String
+
+row : Int
+
+number : Int
+
+⏰ Suất chiếu (ShowTime)
+
+Quản lý lịch chiếu của từng phim.
+
+Cho phép khách hàng đặt và hủy ghế.
+
+Thuộc tính:
+
+showTimeId : String
+
+movieId : String
+
+date : Date
+
+room : String
+
+seatStatus : Seat
+
+🎟️ Vé (Ticket)
+
+Lưu thông tin đặt vé, trạng thái vé.
+
+Cho phép khách hàng xem/hủy vé.
+
+Thuộc tính:
+
+ticketId : String
+
+cinemaId : String
+
+showTimeId : String
+
+seatId : String
+
+movieId : String
+
+status : String
+
+💳 Thanh toán (Payment)
+
+Xử lý thanh toán cho vé đã đặt.
+
+Kiểm tra và cập nhật trạng thái thanh toán.
+
+Thuộc tính:
+
+paymentId : String
+
+ticketId : String
+
+amount : Int
+
+status : Boolean
+
+📊 Mô hình lớp (Class Diagram)
+
+Dự án được xây dựng dựa trên mô hình hướng đối tượng với các lớp chính:
+User, Cinema, Movie, Seat, ShowTime, Ticket, Payment
 <img width="1085" height="501" alt="image" src="https://github.com/user-attachments/assets/d95ba82a-bd5f-4402-88b6-f27556788855" />
 
