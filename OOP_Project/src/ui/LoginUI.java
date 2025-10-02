@@ -1,7 +1,7 @@
-package app.ui;
+package ui;
 
-import app.model.User;
-import app.repo.InMemoryDb;
+import model.User;
+import repo.InMemoryDb;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
