@@ -66,7 +66,6 @@ public class Ticket {
     private boolean status;
 
     public Ticket() {}
-
     public Ticket(String ticketId, String userId, String showtimeId, String seatId, boolean status) {
         this.ticketId = ticketId;
         this.userId = userId;
