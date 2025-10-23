@@ -1,38 +1,85 @@
-package app.model;
-
+package model;
+class StandardTicket extends Ticket {
+    public StandardTicket(String ticketId, String userId, String showtimeId, String seatId, boolean status) {
+        super(ticketId, userId, showtimeId, seatId, status);
+    }
+    @Override
+    public String toString() {
+        return "StandardTicket{" +
+                "ticketId='" + getTicketId() + '\'' +
+                ", userId='" + getUserId() + '\'' +
+                ", showtimeId='" + getShowtimeId() + '\'' +
+                ", seatId='" + getSeatId() + '\'' +
+                ", status=" + isStatus() +
+                '}';
+    }
+}
+class VipTicket extends Ticket {
+    private String loungeAccessCode;
+    private double historyDiscount;
+    /**
+     * Constructor cho VipTicket
+     * @param ticketId
+     * @param userId
+     * @param showtimeId
+     * @param seatId
+     * @param status
+     * @param loungeAccessCode
+     * @param historyDiscount
+     */
+    public VipTicket(String ticketId, String userId, String showtimeId, String seatId, boolean status,
+                     String loungeAccessCode, double historyDiscount) {
+        super(ticketId, userId, showtimeId, seatId, status);
+        this.loungeAccessCode = loungeAccessCode;
+        this.historyDiscount = historyDiscount; // Gán chiết khấu vào đây
+    }
+    public String getLoungeAccessCode() {
+        return loungeAccessCode;
+    }
+    public void setLoungeAccessCode(String loungeAccessCode) {
+        this.loungeAccessCode = loungeAccessCode;
+    }
+    public double getHistoryDiscount() {
+        return historyDiscount;
+    }
+    public void setHistoryDiscount(double historyDiscount) {
+        this.historyDiscount = historyDiscount;
+    }
+    @Override
+    public String toString() {
+        return "VipTicket{" +
+                "ticketId='" + getTicketId() + '\'' +
+                ", userId='" + getUserId() + '\'' +
+                ", showtimeId='" + getShowtimeId() + '\'' +
+                ", seatId='" + getSeatId() + '\'' +
+                ", status=" + isStatus() +
+                ", loungeAccessCode='" + loungeAccessCode + '\'' +
+                ", historyDiscount=" + historyDiscount +
+                '}';
+    }
+}
 public class Ticket {
     private String ticketId;
-    private String showTimeId;
     private String userId;
+    private String showtimeId;
     private String seatId;
-    private String status; // BOOKED, CANCELLED, PAID
-    private String movieId;
+    private boolean status;
 
     public Ticket() {}
 
-    public Ticket(String ticketId, String showTimeId, String userId, String seatId, String status, String movieId) {
+    public Ticket(String ticketId, String userId, String showtimeId, String seatId, boolean status) {
         this.ticketId = ticketId;
-        this.showTimeId = showTimeId;
         this.userId = userId;
+        this.showtimeId = showtimeId;
         this.seatId = seatId;
         this.status = status;
-        this.movieId = movieId;
     }
-
     public String getTicketId() {
         return ticketId;
     }
 
     public void setTicketId(String ticketId) {
         this.ticketId = ticketId;
-    }
-
-    public String getShowTimeId() {
-        return showTimeId;
-    }
-
-    public void setShowTimeId(String showTimeId) {
-        this.showTimeId = showTimeId;
     }
 
     public String getUserId() {
@@ -43,6 +90,14 @@ public class Ticket {
         this.userId = userId;
     }
 
+    public String getShowtimeId() {
+        return showtimeId;
+    }
+
+    public void setShowtimeId(String showtimeId) {
+        this.showtimeId = showtimeId;
+    }
+
     public String getSeatId() {
         return seatId;
     }
@@ -51,28 +106,22 @@ public class Ticket {
         this.seatId = seatId;
     }
 
-    public String getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
-    public String getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(String movieId) {
-        this.movieId = movieId;
-    }
-
-    public void datVe() {
-        // stub
-    }
-
-    public void huyVe() {
-        // stub
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "ticketId='" + ticketId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", showtimeId='" + showtimeId + '\'' +
+                ", seatId='" + seatId + '\'' +
+                ", status=" + status +
+                '}';
     }
 }
-
