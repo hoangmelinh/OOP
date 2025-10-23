@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "LoginUI",
+      "request": "launch",
+      "mainClass": "app.ui.LoginUI",
+      "projectName": "OOP PRJ_6bacac3f"
+    },
+    {
+      "type": "java",
+      "name": "SeatSelectionUI",
+      "request": "launch",
+      "mainClass": "app.ui.SeatSelectionUI",
+      "projectName": "OOP PRJ_6bacac3f"
+    },
+    {
+      "type": "java",
+      "name": "Run app.Main",
+      "request": "launch",
+      "mainClass": "app.Main"
+    }
+  ]
+}
+
