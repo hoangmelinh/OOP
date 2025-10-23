@@ -17,16 +17,6 @@ class StandardTicket extends Ticket {
 class VipTicket extends Ticket {
     private String loungeAccessCode;
     private double historyDiscount;
-    /**
-     * Constructor cho VipTicket
-     * @param ticketId
-     * @param userId
-     * @param showtimeId
-     * @param seatId
-     * @param status
-     * @param loungeAccessCode
-     * @param historyDiscount
-     */
     public VipTicket(String ticketId, String userId, String showtimeId, String seatId, boolean status,
                      String loungeAccessCode, double historyDiscount) {
         super(ticketId, userId, showtimeId, seatId, status);
