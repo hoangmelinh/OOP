@@ -62,45 +62,6 @@ public class CinemaRepository {
         return list;
     }
 
-    public void update(Cinema cinema) {
-        String sql = "UPDATE cinemas SET name=?, address=? WHERE cinema_id=?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, cinema.getName());
-            stmt.setString(2, cinema.getAddress());
-            stmt.setString(3, cinema.getCinemaId());
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    public void delete(String id) {
-        String sql = "DELETE FROM cinemas WHERE cinema_id=?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, id);
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public Cinema findIdByName(String name) {
-        String sql = "SELECT * FROM cinemas WHERE name = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, name);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                return new Cinema(rs.getString("cinema_id"),
-                        rs.getString("name"),
-                        rs.getString("address"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
 }

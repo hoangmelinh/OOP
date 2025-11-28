@@ -47,48 +47,6 @@ public class FilmRepository {
         return null;
     }
 
-    public List<Film> findAll() {
-        List<Film> list = new ArrayList<>();
-        String sql = "SELECT * FROM films";
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement()) {
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                list.add(new Film(rs.getString("film_id"),
-                        rs.getString("title"),
-                        rs.getString("genre"),
-                        rs.getInt("duration"),
-                        rs.getString("description")));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
 
-    public void update(Film film) {
-        String sql = "UPDATE films SET title=?, genre=?, duration=?, description=? WHERE film_id=?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, film.getTitle());
-            stmt.setString(2, film.getGenre());
-            stmt.setInt(3, film.getDuration());
-            stmt.setString(4, film.getDescription());
-            stmt.setString(5, film.getFilmId());
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    public void delete(String id) {
-        String sql = "DELETE FROM films WHERE film_id=?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, id);
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

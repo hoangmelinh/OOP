@@ -31,33 +31,22 @@ public class Showtime {
         return filmId;
     }
 
-    public void setFilmId(String filmId) {
-        this.filmId = filmId;
-    }
 
     public String getCinemaId() {
         return cinemaId;
     }
 
-    public void setCinemaId(String cinemaId) {
-        this.cinemaId = cinemaId;
-    }
+
 
     public Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     public String getRoom() {
         return room;
     }
 
-    public void setRoom(String room) {
-        this.room = room;
-    }
 
     @Override
     public String toString() {

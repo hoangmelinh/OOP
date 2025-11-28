@@ -71,26 +71,6 @@ public class SeatRepository {
         return list;
     }
 
-    public List<Seat> findAll() {
-        List<Seat> list = new ArrayList<>();
-        String sql = "SELECT * FROM seats";
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-            while (rs.next()) {
-                list.add(new Seat(
-                        rs.getString("seat_id"),
-                        rs.getString("showtime_id"),
-                        rs.getBoolean("status"),
-                        rs.getString("row_label"),
-                        rs.getInt("number")
-                ));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
 
     public void update(Seat seat) {
         String sql = "UPDATE seats SET showtime_id=?, status=? WHERE seat_id=?";
@@ -105,14 +85,4 @@ public class SeatRepository {
         }
     }
 
-    public void delete(String seatId) {
-        String sql = "DELETE FROM seats WHERE seat_id=?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, seatId);
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

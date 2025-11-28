@@ -48,21 +48,6 @@ public class BookingService {
         return false;
     }
 
-    // Hủy vé
-    public boolean cancelTicket(String ticketId) {
-        Ticket ticket = ticketRepo.findById(ticketId);
-        if (ticket != null && ticket.isStatus()) {
-            ticket.setStatus(false);
-            ticketRepo.update(ticket);
-            return true;
-        }
-        return false;
-    }
-
-    // Xem lịch sử vé của user
-    public List<Ticket> getUserTickets(String userId) {
-        return ticketRepo.findByUserId(userId);
-    }
 
     public String ShowTicketInfo(Ticket ticket){
         String username = userRepo.findByUserId(ticket.getUserId()).getUsername();
@@ -83,22 +68,8 @@ public class BookingService {
 
         return info;
     }
-    public boolean isSeatAvailable(String seatId, String showtimeId) {
-        Seat seat = seatRepo.findById(seatId);
-        if (seat == null) return false;
 
-        // Kiểm tra nếu ghế thuộc suất chiếu khác thì coi như không hợp lệ
-        if (!seat.getShowtimeId().equals(showtimeId)) return false;
-
-        // Kiểm tra ghế đã có vé đặt chưa
-        List<Ticket> tickets = ticketRepo.findByShowtimeId(showtimeId);
-        for (Ticket t : tickets) {
-            if (t.getSeatId().equals(seatId) && t.isStatus()) {
-                return false; // Ghế đã có người đặt
-            }
-        }
-        return true;
-    }
+    // lay danh sach ghe chua dat
     public List<Seat> getAvailableSeats(String showtimeId) {
         List<Seat> allSeats = seatRepo.findByShowtimeId(showtimeId);
         List<Ticket> tickets = ticketRepo.findByShowtimeId(showtimeId);
@@ -110,12 +81,6 @@ public class BookingService {
         return allSeats;
     }
 
-    public List<String> getShowtimesByFilm(String filmId) {
-        return showtimeRepo.findByFilmId(filmId)
-                .stream()
-                .map(s -> s.getShowtimeId() + " - " + s.getDate() + " - Room " + s.getRoom())
-                .toList();
-    }
 
     public List<Showtime> getShowtimesByCinemaAndFilm(String cinemaId, String filmId) {
         return showtimeRepo.findByCinemaIdAndFilmId(cinemaId,filmId);
@@ -125,9 +90,7 @@ public class BookingService {
         return ticketRepo.findById(ticketId);
     }
 
-    public FilmRepository getFilmRepo() {
-        return filmRepo;
-    }
+
 
     public CinemaRepository getCinemaRepo() {
         return cinemaRepo;
@@ -137,10 +100,6 @@ public class BookingService {
         return showtimeRepo;
     }
 
-    public List<Ticket> getTicketsByUser(User user) {
-
-        return ticketRepo.findByUserId(user.getUserId());
-    }
 
 }
 

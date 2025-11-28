@@ -38,9 +38,6 @@ public class User implements IUser{
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public String getPassword() {
         return password;
@@ -57,25 +54,16 @@ public class User implements IUser{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getContact() {
         return contact;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
 
     public boolean checkPassword(String inputPassword) {
         return hashPassword(hashPassword(inputPassword)).equals(password);

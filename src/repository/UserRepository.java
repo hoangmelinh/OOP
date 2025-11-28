@@ -53,52 +53,7 @@ public class UserRepository {
         return null;
     }
 
-    public List<User> findAll() {
-        List<User> list = new ArrayList<>();
-        String sql = "SELECT * FROM users";
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement()) {
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                list.add(new User(rs.getString("user_id"),
-                        rs.getString("username"),
-                        rs.getString("password"),
-                        rs.getString("name"),
-                        rs.getString("address"),
-                        rs.getString("contact"),
-                        rs.getBoolean("svip")));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
 
-    public void update(User user) {
-        String sql = "UPDATE users SET password=?, name=?, address=?, contact=? WHERE username=?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, user.getPassword());
-            stmt.setString(2, user.getName());
-            stmt.setString(3, user.getAddress());
-            stmt.setString(4, user.getContact());
-            stmt.setString(5, user.getUsername());
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void delete(String username) {
-        String sql = "DELETE FROM users WHERE username=?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, username);
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public User findByUserId(String userId) {
         String sql = "SELECT * FROM users WHERE user_id=?";

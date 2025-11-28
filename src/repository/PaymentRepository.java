@@ -70,26 +70,6 @@ public class PaymentRepository {
         return list;
     }
 
-    public List<Payment> findAll() {
-        List<Payment> list = new ArrayList<>();
-        String sql = "SELECT * FROM payments";
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-            while (rs.next()) {
-                list.add(new Payment(
-                        rs.getString("payment_id"),
-                        rs.getString("user_id"),
-                        rs.getString("ticket_id"),
-                        rs.getBoolean("status"),
-                        rs.getString("total")
-                ));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
 
     public void update(Payment payment) {
         String sql = "UPDATE payments SET user_id=?, ticket_id=?, status=?, total =? WHERE payment_id=?";
@@ -106,14 +86,4 @@ public class PaymentRepository {
         }
     }
 
-    public void delete(String paymentId) {
-        String sql = "DELETE FROM payments WHERE payment_id=?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, paymentId);
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
