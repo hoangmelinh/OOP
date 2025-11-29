@@ -24,24 +24,24 @@ public class MainMenu extends JFrame {
     private void initComponents() {
         JPanel panel = new JPanel(new BorderLayout());
 
-        // Tiêu đề chào user
+
         JLabel lblWelcome = new JLabel("Xin chào, " + currentUser.getName() + "!");
         lblWelcome.setFont(new Font("Arial", Font.BOLD, 18));
         lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 
-        // Tạo nút Booking
+
         JButton btnBooking = new JButton("Đặt vé");
         btnBooking.setFont(new Font("Arial", Font.PLAIN, 16));
 
         JButton btnTicketHistory = new JButton("Lịch sử");
         btnBooking.setFont(new Font("Arial", Font.PLAIN, 16));
 
-        // Khi nhấn "Đặt vé", mở BookingUI
+
         btnBooking.addActionListener(e -> openBooking());
 
         btnTicketHistory.addActionListener(e -> openTicketHistory());
 
-        // Panel giữa
+
         JPanel centerPanel = new JPanel();
         centerPanel.add(btnBooking);
         centerPanel.add(btnTicketHistory);
@@ -53,7 +53,7 @@ public class MainMenu extends JFrame {
     }
 
     private void openBooking() {
-        // ⚡ Bạn có thể truyền BookingService và user vào BookingUI
+
         BookingService bookingService = new BookingService(
                 new repository.TicketRepository(),
                 new repository.SeatRepository(),
@@ -68,7 +68,6 @@ public class MainMenu extends JFrame {
             new BookingUI(bookingService, currentUser).setVisible(true);
         });
 
-        // Nếu muốn đóng MainMenu khi mở Booking:
         //dispose();
     }
 

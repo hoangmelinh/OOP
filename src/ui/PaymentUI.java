@@ -50,7 +50,6 @@ public class PaymentUI extends JFrame {
         JLabel lblTicketInfo = new JLabel();
         lblTicketInfo.setFont(new Font("Arial", Font.PLAIN, 14));
 
-        // 🔤 Format HTML để hiển thị xuống dòng + căn trái
         String formattedInfo = ticketInfo
                 .replace("&", "&amp;")
                 .replace("<", "&lt;")
@@ -75,7 +74,6 @@ public class PaymentUI extends JFrame {
         scrollPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
-        // 🎯 Panel chứa nút
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         JButton btnConfirm = new JButton("Confirm Payment");
         JButton btnCancel = new JButton("Cancel");
