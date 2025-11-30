@@ -34,4 +34,4 @@ Chính từ nhu cầu thực tiễn đó, nhóm quyết định xây dựng **H�
 - **Cơ sở dữ liệu:** Hệ quản trị CSDL quan hệ (Relational Database - MySQL/SQL Server).
 - **Kiến trúc:** Mô hình phân lớp rõ ràng (**Model – DAO – Service – UI**) giúp dễ bảo trì và mở rộng.
 - **Hiệu năng:** Đảm bảo khả năng xử lý đồng thời (Concurrency) khi nhiều người dùng đặt vé cùng lúc.
-## 3. Báo cáo bài tập lớn : https://docs.google.com/document/d/1oa8HUThJFDVHur5r_VW0FPb329oy5L-Zs5oamkI3iZ4/edit?usp=sharing  
+## 3. Báo cáo bài tập lớn : https://docs.google.com/document/d/1RTyYURQ3Okhi_OwNwUBPTAJjKSBe_mXN/edit?usp=sharing&ouid=116226059926510173998&rtpof=true&sd=true
